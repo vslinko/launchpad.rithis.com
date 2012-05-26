@@ -3,6 +3,7 @@ imports:
 
 framework:
     router: { resource: "%kernel.root_dir%/config/routing_dev.yml" }
+    profiler: true
 
 web_profiler:
     toolbar: true
