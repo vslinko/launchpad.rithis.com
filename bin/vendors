@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+$composer = "{$_SERVER['HOME']}/composer.phar";
+
+if (!is_readable($composer)) {
+    $fp = fopen($composer, 'w+');
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'http://getcomposer.org/composer.phar');
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+    curl_exec($ch);
+    curl_close($ch);
+    fclose($fp);
+}
+
+chmod($composer, 0755);
+chdir(__DIR__ . '/..');
+system("$composer install");
