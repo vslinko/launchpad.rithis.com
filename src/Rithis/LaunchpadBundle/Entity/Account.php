@@ -6,6 +6,7 @@ use DateTime;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
+use Symfony\Component\Validator\ExecutionContext;
 
 class Account implements AdvancedUserInterface
 {
@@ -143,6 +144,15 @@ class Account implements AdvancedUserInterface
     {
         $this->salt = hash('sha512', microtime(true));
         $this->password = $encoder->encodePassword($this->password, $this->salt);
+    }
+
+    public function isUsernameValid(ExecutionContext $context)
+    {
+        $reservedNames = array('new');
+
+        if (in_array($this->username, $reservedNames)) {
+            $context->addViolationAtSubPath("username", "Sorry, but this username is reserved");
+        }
     }
 
     public function __toString()
