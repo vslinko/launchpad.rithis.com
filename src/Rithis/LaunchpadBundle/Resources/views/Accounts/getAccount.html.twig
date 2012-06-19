@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<h1>{{ account }}</h1>
+{% if account.roles|length %}
+<ul>
+    {% for role in account.roles %}
+    <li>{{ role }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

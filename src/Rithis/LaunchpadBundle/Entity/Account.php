@@ -5,6 +5,7 @@ namespace Rithis\LaunchpadBundle\Entity;
 use DateTime;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 
 class Account implements AdvancedUserInterface
 {
@@ -138,8 +139,14 @@ class Account implements AdvancedUserInterface
     {
     }
 
-    public static function generateSalt()
+    public function encodePassword(PasswordEncoderInterface $encoder)
     {
-        return hash('sha512', microtime(true));
+        $this->salt = hash('sha512', microtime(true));
+        $this->password = $encoder->encodePassword($this->password, $this->salt);
+    }
+
+    public function __toString()
+    {
+        return sprintf('%s <%s>', $this->username, $this->email);
     }
 }

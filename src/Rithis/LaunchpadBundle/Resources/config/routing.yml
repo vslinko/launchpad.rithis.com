@@ -1,0 +1,17 @@
+rithis_launchpad_new_accounts:
+    pattern: /accounts/new
+    defaults: { _controller: RithisLaunchpadBundle:Accounts:newAccounts }
+    requirements:
+        _method: GET
+
+rithis_launchpad_post_accounts:
+    pattern: /accounts
+    defaults: { _controller: RithisLaunchpadBundle:Accounts:postAccounts }
+    requirements:
+        _method: POST
+
+rithis_launchpad_get_account:
+    pattern: /accounts/{username}
+    defaults: { _controller: RithisLaunchpadBundle:Accounts:getAccount }
+    requirements:
+        _method: GET

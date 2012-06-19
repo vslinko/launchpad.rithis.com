@@ -1,0 +1,8 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<form action="{{ path("rithis_launchpad_post_accounts") }}" method="post">
+    {{ form_widget(form) }}
+    <input type="submit">
+</form>
+{% endblock %}

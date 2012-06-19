@@ -1,0 +1,14 @@
+Rithis\LaunchpadBundle\Entity\Account:
+    properties:
+        username:
+            - NotBlank: ~
+            - MinLength: 3
+            - MaxLength: 32
+        email:
+            - NotBlank: ~
+            - MinLength: 5
+            - MaxLength: 254
+            - Email: ~
+        password:
+            - NotBlank: ~
+            - MinLength: 4

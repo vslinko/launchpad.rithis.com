@@ -1,0 +1,2 @@
+_rithis_launchpad:
+    resource: "@RithisLaunchpadBundle/Resources/config/routing.yml"

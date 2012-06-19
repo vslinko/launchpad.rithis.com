@@ -24,12 +24,10 @@ class LoadAccountData extends AbstractFixture implements OrderedFixtureInterface
         $ceo->setUsername('ceo');
         $ceo->setEmail('ceo@rithis.com');
         $ceo->addRole($this->getReference('role-admin'));
+        $ceo->setPassword('12345Wq');
 
-        $salt = Account::generateSalt();
-        $ceo->setSalt($salt);
-
-        $password = $this->container->get('security.encoder_factory')->getEncoder($ceo)->encodePassword('12345Wq', $salt);
-        $ceo->setPassword($password);
+        $encoder = $this->container->get('security.encoder_factory')->getEncoder($ceo);
+        $ceo->encodePassword($encoder);
 
         $manager->persist($ceo);
         $manager->flush();
