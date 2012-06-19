@@ -1,0 +1,24 @@
+security:
+    encoders:
+        Rithis\LaunchpadBundle\Entity\Account:
+            algorithm: sha512
+            encode_as_base64: false
+            iterations: 1
+
+    providers:
+        chain_provider:
+            chain:
+                providers: [username, email]
+        username:
+            entity:
+                class: Rithis\LaunchpadBundle\Entity\Account
+                property: username
+        email:
+            entity:
+                class: Rithis\LaunchpadBundle\Entity\Account
+                property: email
+
+    firewalls:
+        secured_area:
+            pattern: ^
+            anonymous: ~

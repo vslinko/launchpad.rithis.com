@@ -1,0 +1,48 @@
+Rithis\LaunchpadBundle\Entity\Account:
+    type: entity
+    table: accounts
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        username:
+            type: string
+            length: 32
+            unique: true
+        email:
+            type: string
+            length: 254
+            unique: true
+        password:
+            type: string
+            length: 128
+        salt:
+            type: string
+            length: 128
+        accountExpirationDate:
+            type: datetime
+            column: account_expiration_date
+            nullable: true
+        accountNonLocked:
+            type: boolean
+            column: account_non_locked
+            default: true
+        credentialsExpirationDate:
+            type: datetime
+            column: credentials_expiration_date
+            nullable: true
+        enabled:
+            type: boolean
+            default: true
+    manyToMany:
+        roles:
+            targetEntity: Role
+            joinTable:
+                name: accounts_roles
+                joinColumns:
+                    account_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    role_id:
+                        referencedColumnName: id
