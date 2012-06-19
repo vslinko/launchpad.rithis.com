@@ -1,9 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-$composer = "{$_SERVER['HOME']}/composer.phar";
+$composer = __DIR__ . '/../composer.phar';
 
-if (!is_readable($composer)) {
+if (!is_executable($composer)) {
     $fp = fopen($composer, 'w+');
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://getcomposer.org/composer.phar');
@@ -15,4 +15,4 @@ if (!is_readable($composer)) {
 
 chmod($composer, 0755);
 chdir(__DIR__ . '/..');
-system("$composer install");
+system('./composer.phar install');

@@ -1,5 +1,20 @@
 {
     "name": "rithis/symfony-skeleton",
+    "homepage": "https://github.com/rithis/symfony-skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vyacheslav Slinko",
+            "email": "vyacheslav.slinko@rithis.com",
+            "role": "Founder"
+        }
+    ],
+    "support": {
+        "email": "support@rithis.com",
+        "issues": "https://github.com/rithis/symfony-skeleton/issues",
+        "wiki": "https://github.com/rithis/symfony-skeleton/wiki",
+        "source": "https://github.com/rithis/symfony-skeleton"
+    },
     "require": {
         "symfony/symfony": "dev-master",
         "symfony/monolog-bundle": "dev-master",
@@ -9,10 +24,9 @@
         "doctrine/doctrine-migrations-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master"
     },
-    "authors": [
-        {
-            "name": "Vyacheslav Slinko",
-            "email": "vyacheslav.slinko@gmail.com"
+    "autoload": {
+        "psr-0": {
+            "Rithis": "src"
         }
-    ]
+    }
 }
