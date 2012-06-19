@@ -21,8 +21,7 @@
         "sensio/generator-bundle": "dev-master",
         "doctrine/doctrine-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "doctrine/doctrine-migrations-bundle": "dev-master",
-        "sonata-project/doctrine-orm-admin-bundle": "dev-master"
+        "doctrine/doctrine-migrations-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": {
