@@ -1,5 +1,5 @@
-set :application, "symfony-skeleton"
-set :domain, "#{application}.com"
+set :application, "launchpad.rithis.com"
+set :domain, application
 set :deploy_to, "/var/www/#{domain}"
 
 set :repository, "git://github.com/rithis/#{domain}.git"

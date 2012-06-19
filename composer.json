@@ -1,6 +1,6 @@
 {
-    "name": "rithis/symfony-skeleton",
-    "homepage": "https://github.com/rithis/symfony-skeleton",
+    "name": "rithis/launchpad.rithis.com",
+    "homepage": "https://github.com/rithis/launchpad.rithis.com",
     "license": "MIT",
     "authors": [
         {
@@ -11,9 +11,9 @@
     ],
     "support": {
         "email": "support@rithis.com",
-        "issues": "https://github.com/rithis/symfony-skeleton/issues",
-        "wiki": "https://github.com/rithis/symfony-skeleton/wiki",
-        "source": "https://github.com/rithis/symfony-skeleton"
+        "issues": "https://github.com/rithis/launchpad.rithis.com/issues",
+        "wiki": "https://github.com/rithis/launchpad.rithis.com/wiki",
+        "source": "https://github.com/rithis/launchpad.rithis.com"
     },
     "require": {
         "symfony/symfony": "dev-master",
